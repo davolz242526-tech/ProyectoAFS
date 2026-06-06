@@ -1,0 +1,170 @@
+:root{
+    --bg:#04120f;
+    --card:#0b1f1b;
+    --glass:rgba(255,255,255,.03);
+    --border:rgba(255,255,255,.08);
+
+    --primary:#0fd38a;
+    --warning:#f59e0b;
+    --danger:#ef4444;
+
+    --text:#f5f7f7;
+    --muted:#8ca39b;
+}
+
+body{
+    min-height:100vh;
+    background:
+        radial-gradient(circle at top left,
+        rgba(0,255,150,.10),
+        transparent 30%),
+
+        radial-gradient(circle at top right,
+        rgba(0,255,150,.08),
+        transparent 25%),
+
+        linear-gradient(
+        135deg,
+        #020b09,
+        #041511,
+        #010606
+        );
+
+    color:var(--text);
+}
+
+/* CONTENEDOR */
+.pagos-container{
+    padding:30px;
+     margin-left: 300px;
+
+}
+
+/* TITULO */
+.section-title{
+    font-size:2rem;
+    font-weight:700;
+    margin-bottom:25px;
+}
+
+/* CARDS RESUMEN */
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:16px;
+    margin-bottom:20px;
+}
+
+.stat-card{
+    background:linear-gradient(
+        90deg,
+        rgba(255,255,255,.03),
+        rgba(0,255,150,.02)
+    );
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:20px;
+
+    transition:.3s;
+}
+
+.stat-card:hover{
+    transform:translateY(-4px);
+    border-color:rgba(15,211,138,.3);
+}
+
+.stat-icon{
+    width:40px;
+    height:40px;
+
+    border-radius:12px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(15,211,138,.15);
+
+    color:var(--primary);
+
+    font-size:1.2rem;
+
+    margin-bottom:12px;
+}
+
+.stat-label{
+    color:var(--muted);
+    font-size:.85rem;
+}
+
+.stat-value{
+    font-size:2rem;
+    font-weight:700;
+}
+
+/* TABLA */
+.glass-table{
+    background:rgba(255,255,255,.03);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    overflow:hidden;
+}
+
+.glass-table table{
+    width:100%;
+    margin:0;
+    color:white;
+}
+
+.glass-table thead{
+    background:rgba(255,255,255,.02);
+}
+
+.glass-table th{
+    color:#a6c8bc;
+    font-size:.85rem;
+    font-weight:600;
+    padding:16px;
+}
+
+.glass-table td{
+    padding:16px;
+    border-top:1px solid rgba(255,255,255,.05);
+}
+
+.glass-table tr:hover{
+    background:rgba(255,255,255,.02);
+}
+
+/* BADGES */
+.estado{
+    padding:6px 12px;
+    border-radius:999px;
+    font-size:.75rem;
+    font-weight:600;
+}
+
+.pagado{
+    background:rgba(16,185,129,.15);
+    color:#10b981;
+}
+
+.pendiente{
+    background:rgba(245,158,11,.15);
+    color:#f59e0b;
+}
+
+.vencido{
+    background:rgba(239,68,68,.15);
+    color:#ef4444;
+}

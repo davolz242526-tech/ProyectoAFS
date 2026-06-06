@@ -1,0 +1,210 @@
+<!-- Archivo: login.html -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Corporativo</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" th:href="@{/estilos/login.css}">
+    <link rel="stylesheet" th:href="@{/estilos/formulario.css}">
+
+</head>
+
+<body>
+
+
+
+    <section>
+
+        <div class="wave">
+
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section id="contact">
+
+
+            <div class="bg"></div>
+            <div class="bg bg2"></div>
+            <div class="bg bg3"></div>
+
+
+
+
+            <!-- CANCELAR -->
+            <a class="button_base b_3d" th:href="@{/}">
+                <div>Cancelar</div>
+                <div>Salir de Login</div>
+                <div>Cancelar</div>
+                <div>Salir de Login</div>
+            </a>
+            <div id="alertaLoginAdmin"></div>
+            <div class="card sectionheader">
+                <div class="pricing-block-content">
+                    <p class="pricing-plan">Animal Feed Solutions</p>
+                    <p class="pricing-note">S.A.C. | Sistema interno</p>
+
+
+                </div>
+            </div>
+
+
+
+
+            <article>
+
+                <p>
+                    Ingresa tu correo, contraseña y el código OTP para acceder.
+                </p>
+
+                <label for="checkcontact" class="contactbutton">
+                    <div class="mail"></div>
+                </label>
+
+                <input id="checkcontact" type="checkbox">
+
+                <form class="contactform">
+
+                    <!-- EMAIL -->
+                    <p class="input_wrapper">
+                        <input type="text" id="emailAdmin" placeholder="Email" required>
+                        <label for="emailAdmin">EMAIL</label>
+                    </p>
+
+                    <!-- PASSWORD -->
+                    <p class="input_wrapper">
+                        <input type="text" id="passwordAdmin" placeholder="Password" required>
+                        <label for="passwordAdmin">PASSWORD</label>
+                    </p>
+
+                    <!-- OTP -->
+                    <p class="input_wrapper">
+                        <input type="text" id="codigoAdmin" placeholder="Código de seguridad" required>
+                        <label for="codigoAdmin">OTP</label>
+                    </p>
+
+                    <p class="submit_wrapper">
+                        <input type="button" value="ENVIAR CÓDIGO" onclick="enviarCodigo()">
+                    </p>
+
+                    <p class="submit_wrapper">
+                        <input type="button" value="INGRESAR" onclick="validarAdmin()">
+                    </p>
+
+                </form>
+
+            </article>
+        </section>
+
+
+    </section>
+
+    <!-- Logo y Cabecera 
+
+    <div class="login-card text-center">
+      
+        <img src="https://cdn-icons-png.flaticon.com/512/1864/1864470.png" alt="Logo" width="50" class="mb-2"
+            style="opacity: 0.8;">
+        <h5 class="fw-bold mb-0 text-dark">Animal Feed Solutions</h5>
+        <p class="text-muted small" style="font-size: 0.75rem;">S.A.C. · Sistema interno</p>
+
+        <h4 class="fw-bold mt-4 mb-1">Iniciar sesión</h4>
+        <p class="text-muted small mb-4">Bienvenido de nuevo al sistema AFS</p>
+
+     
+        <form id="formLogin" onsubmit="event.preventDefault(); procesarLogin();">
+
+            <div class="input-group-custom text-start">
+                <i class="bi bi-envelope"></i>
+                <input type="text" id="inputUsuario" class="form-control-custom"
+                    placeholder="Usuario (Ej: pmorales / ventas)" required>
+            </div>
+
+            <div class="input-group-custom text-start">
+                <i class="bi bi-lock"></i>
+                <input type="password" id="inputPassword" class="form-control-custom" placeholder="Contraseña (123456)"
+                    required>
+                <i class="bi bi-eye position-absolute" style="left: auto; right: 5px; cursor: pointer;"></i>
+            </div>
+            <div class="input-group-custom text-start mt-2">
+                <i class="bi bi-shield-lock"></i>
+                <input type="password" id="inputClavePredefinida" class="form-control-custom"
+                    placeholder="Clave de acceso (PIN empresa)" required>
+                <i class="bi bi-eye position-absolute" style="left: auto; right: 5px; cursor: pointer;"></i>
+            </div>
+
+            <div class="text-start mt-4 mb-2">
+                <small class="text-muted" style="font-size: 0.75rem;"><i class="bi bi-stars"></i> Ingresar como</small>
+            </div>
+
+          
+            <div class="role-selector">
+                <div class="role-btn" id="btn-admin" onclick="seleccionarRol('gerente')">
+                    <i class="bi bi-person-badge"></i>
+                    <span>Administrador</span>
+                </div>
+                <div class="role-btn" id="btn-vendedor" onclick="seleccionarRol('vendedor')">
+                    <i class="bi bi-shop"></i>
+                    <span>Vendedor</span>
+                </div>
+                <div class="role-btn" id="btn-comprador" onclick="seleccionarRol('comprador')">
+                    <i class="bi bi-bag-check"></i>
+                    <span>Comprador</span>
+                </div>
+            </div>
+
+        
+            <input type="hidden" id="rolSeleccionado" value="">
+
+            <button type="submit" class="btn btn-ingresar w-100 mt-2">
+                Iniciar sesión <i class="bi bi-arrow-right ms-1"></i>
+            </button>
+
+            <div class="mt-3 text-start">
+    <button type="button" class="btn btn-outline-success w-100"
+        onclick="enviarCodigoSeguridad()">
+        <i class="bi bi-envelope-lock me-1"></i>
+        Enviar código de seguridad
+    </button>
+</div>
+        </form>
+
+  
+        <div class="d-flex justify-content-between mt-4">
+            <a href="#" class="text-success text-decoration-none small fw-semibold">¿Olvidaste tu contraseña?</a>
+            <a href="#" class="text-success text-decoration-none small fw-semibold">¿No tienes cuenta? Regístrate</a>
+        </div>
+    </div> -->
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script th:src="@{/script/loginRoles.js}"></script>
+</body>
+
+</html>

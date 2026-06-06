@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" th:href="@{/estilos/navbarTienda.css}">
+    <link rel="stylesheet" th:href="@{/estilos/tienda.css}">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+
+
+
+    <!-- Navbar -->
+    <div th:replace="~{fragmentos/navTienda :: navbarT}"></div>
+
+    <div th:replace="~{fragmentos/carrito :: cartOffcanvas}"></div>
+    <div th:replace="~{fragmentos/notificaciones :: notiOffCanvas}"></div>
+
+
+
+
+    <section class="orders-section container my-5">
+
+  <h3 class="section-title">Mis Pedidos</h3>
+
+  <div class="dd">
+
+    <!-- PEDIDO 1 -->
+    <div class="order-card"
+         data-id="1"
+         data-estado="En proceso"
+         data-bs-toggle="offcanvas"
+         data-bs-target="#orderOffcanvas">
+
+      <div class="order-info">
+        <h5>Pedido #1</h5>
+        <p>2026-05-30</p>
+      </div>
+
+      <div class="order-status">
+        <span class="activo">En proceso</span>
+      </div>
+    </div>
+
+    <!-- PEDIDO 2 -->
+    <div class="order-card"
+         data-id="2"
+         data-estado="En camino"
+         data-bs-toggle="offcanvas"
+         data-bs-target="#orderOffcanvas">
+
+      <div class="order-info">
+        <h5>Pedido #2</h5>
+        <p>2026-05-28</p>
+      </div>
+
+      <div class="order-status">
+        <span class="activo">En camino</span>
+      </div>
+    </div>
+
+    <!-- PEDIDO 3 -->
+    <div class="order-card"
+         data-id="3"
+         data-estado="Entregado"
+         data-bs-toggle="offcanvas"
+         data-bs-target="#orderOffcanvas">
+
+      <div class="order-info">
+        <h5>Pedido #3</h5>
+        <p>2026-05-25</p>
+      </div>
+
+      <div class="order-status">
+        <span class="activo">Entregado</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+  <!-- OFF CANVAS PARA INFO DE LOS -->
+
+
+
+<div class="offcanvas offcanvas-top full-order-offcanvas"
+     tabindex="-1"
+     id="orderOffcanvas">
+
+  <!-- HEADER -->
+  <div class="offcanvas-header custom-header">
+
+    <div>
+      <h4 class="offcanvas-title"> Seguimiento del Pedido</h4>
+      <small class="subtitle">Detalles completos del estado de tu compra</small>
+    </div>
+
+    <!--  CERRAR MEJORADO -->
+    <button type="button"
+            class="close-btn"
+            data-bs-dismiss="offcanvas">
+      ✕
+    </button>
+
+  </div>
+
+
+  <!-- BODY -->
+
+  <div class="offcanvas-body">
+
+    <!-- INFO GENERAL -->
+    <div class="order-info-box">
+
+      <h5 id="orderTitle">Pedido #---</h5>
+
+      <div class="order-meta">
+        <p><b>Fecha:</b> <span id="orderDate">dia/mes/2026</span></p>
+        <p><b>Total:</b> S/ <span id="orderTotal">0.00</span></p>
+        <p><b>Estado:</b> <span id="orderStatusText">Sin seleccionar</span></p>
+      </div>
+
+    </div>
+
+    <hr style="border-color: rgba(201,180,120,0.2);">
+
+    <h5>Estado del envío</h5>
+
+    <div class="tracking-box horizontal">
+
+      <div class="step active">Pedido recibido</div>
+      <div class="step">En preparación</div>
+      <div class="step">En camino</div>
+      <div class="step">Entregado</div>
+
+    </div>
+   
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script th:src="@{/script/tienda.js}"></script>
+        <script th:src="@{/script/misPedidos.js}"></script>
+  <script th:src="@{/script/SolicitarVisita.js}"></script>
+
+
+
+
+
+</body>
+
+</html>

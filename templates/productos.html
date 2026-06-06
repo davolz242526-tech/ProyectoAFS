@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" th:href="@{/estilos/navAdmin.css}">
+    <link rel="stylesheet" th:href="@{/estilos/productos.css}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div th:replace="fragmentos/navAdmin :: navAdmin"></div>
+
+<div class="products-container">
+
+    <!-- HEADER -->
+    <div class="product-header">
+
+        <h1>Productos</h1>
+
+        <div class="product-actions d-flex flex-wrap gap-2">
+
+            <input type="text" class="product-search" placeholder="Buscar producto...">
+
+            <button class="btn btn-success">
+                <i class="bi bi-plus-lg"></i> Agregar producto
+            </button>
+
+        </div>
+
+    </div>
+
+    
+    <div class="filtros-container mt-3">
+
+        <div class="pestanas-categorias d-flex flex-wrap gap-2">
+
+            <button class="boton-pestana activo" data-categoria="avicola">Avícola</button>
+            <button class="boton-pestana" data-categoria="crecimiento">Crecimiento</button>
+            <button class="boton-pestana" data-categoria="engorde">Engorde</button>
+            <button class="boton-pestana" data-categoria="otros">Otros</button>
+
+        </div>
+
+    </div>
+
+    <!-- GRID RESPONSIVE -->
+    <div class="product-grid">
+
+        <!-- PRODUCTO -->
+        <div class="book">
+            <div class="cover">
+
+                <img class="product-img"
+                    src="https://lorosyguacamayos.com.ar/wp-content/uploads/cuales-son-los-nutrientes-necesarios-para-las-aves-1024x1024.webp">
+
+                <div class="product-info">
+                    <h3 class="product-name">INICIO PREMIUM</h3>
+                    <small class="product-code">AFS-INI</small>
+
+                    <div class="stock">
+                        STOCK: <strong>1240 KG</strong>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="inside">
+                <div class="price">Disponible: 1240 KG</div>
+
+                <div class="actions">
+                    <button class="btn-plus"><i class="bi bi-plus"></i></button>
+                    <button class="btn-minus"><i class="bi bi-dash"></i></button>
+                    <button class="btn-delete"><i class="bi bi-trash"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 2 -->
+        <div class="book">
+            <div class="cover">
+
+                <img class="product-img"
+                    src="https://lorosyguacamayos.com.ar/wp-content/uploads/cuales-son-los-nutrientes-necesarios-para-las-aves-1024x1024.webp">
+
+                <div class="product-info">
+                    <h3 class="product-name">INICIO PREMIUM</h3>
+                    <small class="product-code">AFS-INI</small>
+
+                    <div class="stock">
+                        STOCK: <strong>1240 KG</strong>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="inside">
+                <div class="price">Disponible: 1240 KG</div>
+
+                <div class="actions">
+                    <button class="btn-plus"><i class="bi bi-plus"></i></button>
+                    <button class="btn-minus"><i class="bi bi-dash"></i></button>
+                    <button class="btn-delete"><i class="bi bi-trash"></i></button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+ <div class="book">
+            <div class="cover">
+
+                <img class="product-img"
+                    src="https://lorosyguacamayos.com.ar/wp-content/uploads/cuales-son-los-nutrientes-necesarios-para-las-aves-1024x1024.webp">
+
+                <div class="product-info">
+                    <h3 class="product-name">INICIO PREMIUM</h3>
+                    <small class="product-code">AFS-INI</small>
+
+                    <div class="stock">
+                        STOCK: <strong>1240 KG</strong>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="inside">
+                <div class="price">Disponible: 1240 KG</div>
+
+                <div class="actions">
+                    <button class="btn-plus"><i class="bi bi-plus"></i></button>
+                    <button class="btn-minus"><i class="bi bi-dash"></i></button>
+                    <button class="btn-delete"><i class="bi bi-trash"></i></button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+         <div class="book">
+            <div class="cover">
+
+                <img class="product-img"
+                    src="https://lorosyguacamayos.com.ar/wp-content/uploads/cuales-son-los-nutrientes-necesarios-para-las-aves-1024x1024.webp">
+
+                <div class="product-info">
+                    <h3 class="product-name">INICIO PREMIUM</h3>
+                    <small class="product-code">AFS-INI</small>
+
+                    <div class="stock">
+                        STOCK: <strong>1240 KG</strong>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="inside">
+                <div class="price">Disponible: 1240 KG</div>
+
+                <div class="actions">
+                    <button class="btn-plus"><i class="bi bi-plus"></i></button>
+                    <button class="btn-minus"><i class="bi bi-dash"></i></button>
+                    <button class="btn-delete"><i class="bi bi-trash"></i></button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
