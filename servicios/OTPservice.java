@@ -22,7 +22,7 @@ public class OTPservice {
         allowedEmails.add("prololol1234@gmail.com");
         allowedEmails.add("elgatosonso@gmail.com");
          allowedEmails.add("vjuanm28@gmail.com");
-          allowedEmails.add("moralesyupanqui190971@gmail.com");
+          allowedEmails.add("luisxd67961.com");
     }
 
     public String generateCode(String email) {
