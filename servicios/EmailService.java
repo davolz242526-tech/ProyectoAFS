@@ -1,6 +1,5 @@
 package com.example.Integrador.servicios;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -12,7 +11,7 @@ public class EmailService {
     @Autowired
     private JavaMailSender mailSender;
 
-    //   OTP
+    // OTP
     public void sendCode(String to, String code) {
 
         SimpleMailMessage message = new SimpleMailMessage();
@@ -23,28 +22,23 @@ public class EmailService {
         mailSender.send(message);
     }
 
+    // formulario de contacto
+    public void sendContactMessage(String nombre, String correo, String telefono, String mensaje) {
 
+        SimpleMailMessage mail = new SimpleMailMessage();
 
+        mail.setTo("empresa@gmail.com");
 
-    //  formulario de contacto
-   public void sendContactMessage(String nombre, String correo, String telefono, String mensaje) {
-    
-    SimpleMailMessage mail = new SimpleMailMessage();
+        mail.setReplyTo(correo);
 
-    mail.setTo("empresa@gmail.com");
+        mail.setSubject("Nuevo contacto web - " + nombre);
 
+        mail.setText(
+                "Nombre: " + nombre + "\n" +
+                        "Correo: " + correo + "\n" +
+                        "Teléfono: " + telefono + "\n\n" +
+                        mensaje);
 
-    mail.setReplyTo(correo);
-
-    mail.setSubject("Nuevo contacto web - " + nombre);
-
-    mail.setText(
-            "Nombre: " + nombre + "\n" +
-            "Correo: " + correo + "\n" +
-            "Teléfono: " + telefono + "\n\n" +
-            mensaje
-    );
-
-    mailSender.send(mail);
-}
+        mailSender.send(mail);
+    }
 }

@@ -15,7 +15,8 @@
     CARD PRINCIPAL
  ========================= */
 .ca-card {
-    width: 320px;                    /* Más pequeña */
+    width: 320px;
+    /* Más pequeña */
     aspect-ratio: 3.1 / 4.1;
     border-radius: 24px;
     position: relative;
@@ -23,19 +24,17 @@
     background: #0a0a0a;
     border: 1px solid rgba(255, 179, 2, 0.3);
     color: #00ff9d;
-    
+
     transform-style: preserve-3d;
     transition: transform 0.2s linear;
-    transform: rotateY(calc(-18deg * var(--ratio-x))) 
-                rotateX(calc(18deg * var(--ratio-y)));
+    transform: rotateY(calc(-18deg * var(--ratio-x))) rotateX(calc(18deg * var(--ratio-y)));
 
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
 /* Efecto hover */
 .ca-card:hover {
-    transform: rotateY(calc(-22deg * var(--ratio-x))) 
-                rotateX(calc(22deg * var(--ratio-y)));
+    transform: rotateY(calc(-22deg * var(--ratio-x))) rotateX(calc(22deg * var(--ratio-y)));
     border-color: #09ffb5;
 }
 
@@ -220,38 +219,35 @@
     ANIMACIÓN 3D
  ====================== */
 @property --ratio-x {
-  syntax: "<number>";
-  inherits: true;
-  initial-value: 0;
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
 }
 
 @property --ratio-y {
-  syntax: "<number>";
-  inherits: true;
-  initial-value: 0;
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
 }
 
 @keyframes rotate {
-  0%, 100% { --ratio-x: 0.9;  --ratio-y: 0.6; }
-  50%      { --ratio-x: -0.8; --ratio-y: -0.65; }
+
+    0%,
+    100% {
+        --ratio-x: 0.9;
+        --ratio-y: 0.6;
+    }
+
+    50% {
+        --ratio-x: -0.8;
+        --ratio-y: -0.65;
+    }
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /*  GRID DE CARDS  */
-
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);     
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     max-width: 1200px;
     margin: auto;
@@ -261,28 +257,15 @@
 @media (max-width: 768px) {
     .cards-grid {
         grid-template-columns: 1fr;
-      
+
     }
 }
 
 @media (min-width: 1200px) {
     .cards-grid {
-        grid-template-columns: repeat(2, 420px);   
+        grid-template-columns: repeat(2, 420px);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* contenedor tarjetas */
 .contenedor-card {
@@ -292,98 +275,91 @@
     gap: 300px;
 }
 
-
-
-
-
-
-
-
-
 /*NAVBAR*/
 
 .center-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 
-  position: sticky;
-  top: 0;              
-  z-index: 1000;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
-  padding-top: 15px;  
-  padding-bottom: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 
 }
 
 .di-radio-wrap {
-  display: flex;
-  justify-content: center;
-  position: relative;
+    display: flex;
+    justify-content: center;
+    position: relative;
 }
 
 .di-radio-island {
-  background: #000;
-  border-radius: 999px;
-  padding: 8px;
+    background: #000;
+    border-radius: 999px;
+    padding: 8px;
 
-  display: flex;
-  position: relative;
-  gap: 6px;
+    display: flex;
+    position: relative;
+    gap: 6px;
 
-  min-width: 420px; 
-  justify-content: space-between;
+    min-width: 420px;
+    justify-content: space-between;
 }
 
 .di-radio-input {
-  display: none;
+    display: none;
 }
 
 .di-radio-btn {
-  color: #aaa;
-  font-size: 14px;
-  padding: 12px 26px; 
-  border-radius: 999px;
-  cursor: pointer;
-  position: relative;
-  z-index: 2;
-  transition: all 0.3s ease;
+    color: #aaa;
+    font-size: 14px;
+    padding: 12px 26px;
+    border-radius: 999px;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
 }
 
 .di-radio-indicator {
-  position: absolute;
-  top: 6px;
-  left: 6px;
+    position: absolute;
+    top: 6px;
+    left: 6px;
 
-  width: calc(33.33% - 8px); 
-  height: calc(100% - 12px);
+    width: calc(33.33% - 8px);
+    height: calc(100% - 12px);
 
- background:linear-gradient(90deg,#ffb300,#ffe066,#28f0b4);  border-radius: 999px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(90deg, #ffb300, #ffe066, #28f0b4);
+    border-radius: 999px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-#r1:checked ~ .di-radio-island .di-radio-indicator {
-  transform: translateX(0);
+#r1:checked~.di-radio-island .di-radio-indicator {
+    transform: translateX(0);
 }
 
-#r2:checked ~ .di-radio-island .di-radio-indicator {
-  transform: translateX(100%);
+#r2:checked~.di-radio-island .di-radio-indicator {
+    transform: translateX(100%);
 }
 
-#r3:checked ~ .di-radio-island .di-radio-indicator {
-  transform: translateX(200%);
+#r3:checked~.di-radio-island .di-radio-indicator {
+    transform: translateX(200%);
 }
 
 /* texto activo */
-#r1:checked ~ .di-radio-island label[for="r1"],
-#r2:checked ~ .di-radio-island label[for="r2"],
-#r3:checked ~ .di-radio-island label[for="r3"] {
-  color: #fff;
-  transform: translateY(-1px);
+#r1:checked~.di-radio-island label[for="r1"],
+#r2:checked~.di-radio-island label[for="r2"],
+#r3:checked~.di-radio-island label[for="r3"] {
+    color: #fff;
+    transform: translateY(-1px);
 }
 
 .di-radio-btn:active {
-  transform: scale(0.92);
+    transform: scale(0.92);
 }
 
 
@@ -415,42 +391,42 @@
 
 /* BOTÓN */
 .btn-toggle {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  border: none;
-  background: #ffc000;
-  color: #000;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border: none;
+    background: #ffc000;
+    color: #000;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 /* CONTENEDOR DINÁMICO */
 .contenedor-dinamico {
-  width: 90%;
-  margin: 20px auto;
-  padding: 20px;
-  background: rgba(0,0,0,0.6);
-  border-radius: 15px;
-  color: white;
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    color: white;
 
-  transition: all 0.4s ease;
-  overflow: hidden;
+    transition: all 0.4s ease;
+    overflow: hidden;
 }
 
 /* OCULTO */
 .oculto {
-  max-height: 0;
-  opacity: 0;
-  transform: translateY(-10px);
-  pointer-events: none;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
 }
 
 /* VISIBLE */
 .mostrar {
-  max-height: 500px;
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
+    max-height: 500px;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
