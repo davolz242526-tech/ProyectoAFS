@@ -1,6 +1,5 @@
-
-
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+
 :root {
     --green-main: rgb(105, 228, 28);
     --green-outline: hsla(96.67deg, 81.15%, 47.84%, 0.35);
@@ -11,7 +10,6 @@
     --card-bg: rgba(10, 18, 14, 0.75);
 }
 
-
 body {
     margin: 0;
     font-family: "Inter", sans-serif;
@@ -21,14 +19,10 @@ body {
     overflow-x: hidden;
 }
 
-
 .content {
     min-height: 100vh;
     background: transparent;
 }
-
-
-   
 
 .search-bar {
     display: flex;
@@ -66,16 +60,12 @@ body {
     transform: translateY(-2px);
 }
 
-
-
 h2 {
     color: var(--green-main);
     letter-spacing: 3px;
     text-transform: uppercase;
     text-shadow: 0 0 10px rgba(105, 228, 28, 0.25);
 }
-
-
 
 .table-container {
     background: var(--card-bg);
@@ -87,8 +77,6 @@ h2 {
 
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
 }
-
-
 
 .table {
     margin: 0;
@@ -126,7 +114,6 @@ h2 {
     font-size: 0.85rem;
 }
 
-
 .avatar-sm {
     display: inline-flex;
     align-items: center;
@@ -145,8 +132,6 @@ h2 {
     font-size: 0.7rem;
     font-weight: bold;
 }
-
-
 
 .badge-premium {
     padding: 6px 10px;
@@ -174,8 +159,6 @@ h2 {
     color: #c7c7c7;
 }
 
-
-
 .text-success {
     color: var(--green-main) !important;
 }
@@ -183,8 +166,6 @@ h2 {
 .text-danger {
     color: #ff5e5e !important;
 }
-
-
 
 @media (max-width: 768px) {
 
@@ -203,7 +184,6 @@ h2 {
     }
 }
 
-
 .table-container {
     animation: fadeUp 0.6s ease;
 }
@@ -213,14 +193,12 @@ h2 {
         opacity: 0;
         transform: translateY(15px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
-
-
-
 
 :root {
     --sidebar-width: 280px;
@@ -230,7 +208,8 @@ h2 {
     display: flex;
 }
 
-#sidebar, nav {
+#sidebar,
+nav {
     width: var(--sidebar-width);
     position: fixed;
     left: 0;
@@ -238,18 +217,9 @@ h2 {
     height: 100vh;
 }
 
-
 .content {
     margin-left: var(--sidebar-width);
     width: calc(100% - var(--sidebar-width));
     min-height: 100vh;
     padding: 25px;
 }
-
-
-
-
-
-
-
-

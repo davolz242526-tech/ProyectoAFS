@@ -4,25 +4,21 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-
 import org.springframework.stereotype.Service;
-
 
 @Service
 public class OTPservice {
 
     private final Map<String, String> codes = new HashMap<>();
-
     private final Set<String> allowedEmails = new HashSet<>();
-
     private final String password = "1234";
 
     public OTPservice() {
         allowedEmails.add("david08af@gmail.com");
         allowedEmails.add("prololol1234@gmail.com");
         allowedEmails.add("elgatosonso@gmail.com");
-         allowedEmails.add("vjuanm28@gmail.com");
-          allowedEmails.add("luisxd67961.com");
+        allowedEmails.add("vjuanm28@gmail.com");
+        allowedEmails.add("moralesyupanqui190971@gmail.com");
     }
 
     public String generateCode(String email) {
