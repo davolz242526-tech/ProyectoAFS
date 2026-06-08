@@ -28,6 +28,7 @@ public class Notificacion {
 
     private String tipo;
     private String detalle;
+    private String correo;
 
     private Boolean leida = false;
 
