@@ -27,6 +27,7 @@ public class Notificacion {
     private String mensaje;
 
     private String tipo;
+    private String detalle;
 
     private Boolean leida = false;
 
